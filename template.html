@@ -12,6 +12,11 @@
   <link rel="stylesheet" media="all" href="theme/css/default.css">
   <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.2/d3.min.js"></script>
+  <script src="js/r3.pie.js"></script>
+
   <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
 </head>
 <body style="opacity: 0">
@@ -26,7 +31,7 @@
       <p data-config-presenter><!-- populated from slide_config.json --></p>
     </hgroup>
   </slide>
-  
+
   <slide class="logoslide nobackground">
     <article class="flexbox vcenter">
       <img src="images/fedlogo.svg" style="display: block; width: 62%; height: auto;">
@@ -34,7 +39,7 @@
   </slide>
 
   <slide>
-    <hgroup class="auto-fadein">
+    <hgroup>
       <h2>What's D3.js?</h2>
     </hgroup>
     <article>
@@ -54,8 +59,21 @@
     <article>
       <p>What it is:</p>
       <ul class="build">
-        <li>a tool to bind data to the DOM</li>
-        <li>DOM selection and manipulation ()</li>
+        <li>
+          A tool to bind data to the DOM
+        </li>
+        <li>
+          DOM selection and manipulation
+        </li>
+        <li>
+          Enter/Exit
+        </li>
+        <li>
+          Transformation and Composition
+        </li>
+        <li>
+          Transitions
+        </li>
       </ul>
     </article>
   </slide>
@@ -86,27 +104,77 @@
 
   <slide>
     <hgroup>
-      <h2>Slide with Bullets</h2>
+      <h2>Bar Chart</h2>
     </hgroup>
     <article>
-      <ul>
-        <li>Titles are formatted as Open Sans with bold applied and font size is set at 45</li>
-        <li>Title capitalization is title case
-          <ul>
-            <li>Subtitle capitalization is title case</li>
-          </ul>
-        </li>
-        <li>Subtitle capitalization is title case</li>
-        <li>Titles and subtitles should never have a period at the end</li>
-      </ul>
+      <img src="images/bars.png">
+      <img src="images/bars-1.png">
     </article>
   </slide>
 
   <slide>
     <hgroup>
-      <h2>Slide with Bullets that Build</h2>
-      <h3>Subtitle Placeholder</h3>
+      <h2>Bar Chart</h2>
     </hgroup>
+    <article>
+      <img src="images/bars.png">
+      <img src="images/bars-2.png">
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Bar Chart</h2>
+    </hgroup>
+    <article>
+      <img src="images/bars.png">
+      <img src="images/bars-3.png">
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Bar Chart</h2>
+    </hgroup>
+    <article>
+      <img src="images/bars.png">
+      <img src="images/bars-4.png">
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Bar Chart</h2>
+    </hgroup>
+    <article>
+      <img src="images/bars.png">
+      <img src="images/bars-5.png">
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Bar Chart</h2>
+    </hgroup>
+    <article>
+      <img src="images/bars.png">
+      <img src="images/bars-6.png">
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>But...</h2>
+    </hgroup>
+    <article>
+      <p>D3 doesn't offer many opinions about:</p>
+      <ul>
+        <li>organization & architecture</li>
+        <li>reducing boilerplate</li>
+        <li>patterns for code reuse</li>
+      </ul>
+    </article>
+<!--
     <article>
       <p>A list where items build:</p>
       <ul class="build">
@@ -124,80 +192,175 @@
         <li>Hover over me!</li>
       </ul>
     </article>
+-->
+  </slide>
+
+  <slide class="segue dark quote nobackground">
+    <article class="flexbox vleft auto-fadein">
+      <h2>Architecting <b>Reusable</b> Charts</h2>
+      <div class="author">
+        Mike Bostock<br>
+        Towards Reusable Charts<br>
+        <a href="http://bost.ocks.org/mike/chart/">http://bost.ocks.org/mike/chart/</a>
+      </div>
+    </article>
   </slide>
 
   <slide>
     <hgroup>
-      <h2>Slide with (Smaller Font)</h2>
+      <h2>Architecting Reusable Charts</h2>
     </hgroup>
-    <article class="smaller">
-      <ul>
-        <li>All <a href="http://google.com">links</a> open in new tabs.</li>
-        <li>To change that this, add <code>target="_self"</code> to the link.</li>
+    <article>
+      <ul class="build">
+        <li>Configurable</li>
+        <li>Extensible</li>
+        <li>Repeatable</li>
       </ul>
     </article>
   </slide>
 
-  <slide hidden>
-    Hidden slides are left out of the presentation.
-  </slide>
-
   <slide>
     <hgroup>
-      <h2>Code Slide (with Subtitle Placeholder)</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-    <article>
-      <p>Press 'h' to highlight important sections of code (wrapped in <code>&lt;b&gt;</code>).</p>
-      <pre class="prettyprint" data-lang="javascript">
-&lt;script type='text/javascript'&gt;
-  // Say hello world until the user starts questioning
-  // the meaningfulness of their existence.
-  function helloWorld(world) {
-    <b>for (var i = 42; --i &gt;= 0;) {
-      alert('Hello ' + String(world));
-    }</b>
-  }
-&lt;/script&gt;
-</pre>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Code Slide (Smaller Font)</h2>
+      <h4>Architecting Reusable Charts</h4>
+      <h2>Configurable</h2>
     </hgroup>
     <article class="smaller">
+      <p>Using r3</p>
       <pre class="prettyprint" data-lang="javascript">
-// Say hello world until the user starts questioning
-// the meaningfulness of their existence.
-function helloWorld(world) {
-  for (var i = 42; --i &gt;= 0;) {
-    alert('Hello ' + String(world));
+var opts = {
+  maxValue: 60,
+  background: true,
+  thickness: 2
+};
+
+var donut = r3.donut.generate(opts);
+
+setInterval(function() {
+  donut.load({ data: new Date().getSeconds() });
+}, 1000);
+</pre>
+      <div id="pie-1" class="pie-example"></div>
+      <div id="pie-2" class="pie-example"></div>
+      <div id="pie-3" class="pie-example"></div>
+
+      <script type="text/javascript">
+        var r = 150;
+
+        width = height = 150;
+
+        var donut = r3.donut.generate({
+          bindTo: '#pie-3',
+          maxValue: 60,
+          background: true,
+          thickness: 2,
+          colors: ['red'],
+          size: {
+            width: r,
+            height: r
+          }
+        });
+
+        setInterval(function() {
+          donut.load({ data: new Date().getSeconds() });
+        }, 1000);
+
+        var donut2 = r3.donut.generate({
+          bindTo: '#pie-2',
+          thickness: 20,
+          offset: 8,
+          size: {
+            width: r,
+            height: r
+          }
+        });
+
+        donut2.load({ data: [2,6,4,7,11] });
+
+        var donut3 = r3.donut.generate({
+          bindTo: '#pie-1',
+          size: {
+            width: r,
+            height: r
+          }
+        });
+
+        donut3.load({ data: [2,6,4,7,11] });
+      </script>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h4>Architecting Reusable Charts</h4>
+      <h2>Extensible</h2>
+    </hgroup>
+    <article class="smaller">
+      <p>Using d3.chart</p>
+      <pre class="prettyprint" data-lang="javascript">
+// define a chart
+d3.chart("CircleChart", {
+  initialize: function() {
+    log("Hi! I'm a chart");
   }
-}
+});
+
+// extend the original chart with additional functionality
+d3.chart("CircleChart").extend("OtherCircleChart", {
+  initialize: function() {
+    log("I am a circle chart based on the one above!");
+  }
+})
+
+var chart = d3.select(output)
+  .chart("OtherCircleChart");
 </pre>
-<pre class="prettyprint" data-lang="css">
-&lt;style&gt;
-  p { color: pink }
-  b { color: blue }
-&lt;/style&gt;
-</pre>
-<pre class="prettyprint" data-lang="html">
-&lt;!DOCTYPE html>
-&lt;html>
-&lt;head>
-  &lt;title>My Awesome Page&lt;/title>
-&lt;/head>
-&lt;body>
-  &lt;p&gt;Hello world&lt;/p&gt;
-&lt;body>
-&lt;/html>
+      <footer class="source">source: <a href="http://misoproject.com/d3-chart/api.html#d3chart_extend">http://misoproject.com/d3-chart/api.html#d3chart_extend</a></footer>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h4>Architecting Reusable Charts</h4>
+      <h2>Repeatable</h2>
+    </hgroup>
+    <article class="smaller">
+      <p>Using d3.chart</p>
+      <pre class="prettyprint" data-lang="javascript">
+// define a chart
+d3.chart("CircleChart", {
+  initialize: function() {
+    log("Hi! I'm a chart");
+  }
+});
+
+var chart1 = d3.select("#chart1")
+  .chart("CircleChart");
+
+var chart2 = d3.select("#chart2")
+  .chart("CircleChart");
 </pre>
     </article>
   </slide>
 
   <slide>
+    <article class="flexbox vcenter">
+      <img src="images/d3.chart.png">
+      <footer class="source">source: Miso Project – d3.chart <a href="http://misoproject.com/d3-chart/">http://misoproject.com/d3-chart/</a></footer>
+    </article>
+  </slide>
+
+  <slide>
+    <article class="flexbox vcenter">
+      <ul>
+        <li>n3-charts<a href="http://n3-charts.github.io/line-chart/#/">http://n3-charts.github.io/line-chart/#/</a></li>
+        <li>NVD3<a href="http://nvd3.org/">http://nvd3.org/</a></li>
+        <li>C3<a href="http://c3js.org/">http://c3js.org/</a></li>
+        <li>d3.chart<a href="http://misoproject.com/d3-chart/">http://misoproject.com/d3-chart/</a></li>
+      </ul>
+    </article>
+  </slide>
+
+<!--
     <aside class="note">
       <section>
         <ul>
@@ -209,13 +372,7 @@ function helloWorld(world) {
         <p><b>Remember to say this tag line!</b></p>
       </section>
     </aside>
-    <hgroup>
-      <h2>Slide with Speaker Notes</h2>
-    </hgroup>
-    <article>
-      <p>Press 'p' to toggle speaker notes.</p>
-    </article>
-  </slide>
+-->
 
   <slide>
     <aside class="note">
@@ -234,162 +391,6 @@ function helloWorld(world) {
       This setting is sticky, meaning refreshing the page will persist presenter
       mode.</p>
       <p>Hit <code><a href="?presentme=false" target="_self">?presentme=false</a></code> to disable presenter mode.</p>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Slide with Image</h2>
-    </hgroup>
-    <article>
-      <img src="images/chart.png" class="reflect" alt="Description" title="Description">
-      <footer class="source">source: place source info here</footer>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Slide with Image (Centered horz/vert)</h2>
-    </hgroup>
-    <article class="flexbox vcenter">
-      <img src="images/barchart.png" alt="Description" title="Description">
-      <footer class="source">source: place source info here</footer>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Table Option A</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-    <article>
-      <table>
-        <tr>
-          <th></th><th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 4</th>
-        </tr>
-        <tr>
-          <td>Row 1</td><td>placeholder</td><td class="highlight">placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 2</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 3</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 4</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 5</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-      </table>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Table Option A (Smaller Text)</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-    <article class="smaller">
-      <table>
-        <tr>
-          <th></th><th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 4</th>
-        </tr>
-        <tr>
-          <td>Row 1</td><td>placeholder</td><td class="highlight">placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 2</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 3</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 4</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 5</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-      </table>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Table Option B</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-    <article>
-      <table class="rows">
-        <tr>
-          <th>Header 1</th><td>placeholder</td><td class="highlight">placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 2</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 3</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 4</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 5</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-      </table>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Slide Styles</h2>
-    </hgroup>
-    <article class="smaller">
-      <div class="columns-2">
-        <ul>
-          <li class="red">class="red"</li>
-          <li class="red2">class="red2"</li>
-          <li class="red3">class="red3"</li>
-          <li class="blue">class="blue"</li>
-          <li class="blue2">class="blue2"</li>
-          <li class="blue3">class="blue3"</li>
-          <li class="green">class="green"</li>
-          <li class="green2">class="green2"</li>
-        </ul>
-        <ul>
-          <li class="green3">class="green3"</li>
-          <li class="yellow">class="yellow"</li>
-          <li class="yellow2">class="yellow2"</li>
-          <li class="yellow3">class="yellow3"</li>
-          <li class="gray">class="gray"</li>
-          <li class="gray2">class="gray2"</li>
-          <li class="gray3">class="gray3"</li>
-          <li class="gray4">class="gray4"</li>
-        </ul>
-      </div>
-      <div class="centered" style="margin-top:2em">
-        I am centered text with a <button>Button</button> and <button disabled>Disabled</button> button.
-      </div>
-    </article>
-  </slide>
-
-  <slide class="fill nobackground" style="background-image: url(images/sky.jpg)">
-    <hgroup>
-      <h2 class="white">Full Image (with Optional Header)</h2>
-    </hgroup>
-    <footer class="source white">www.flickr.com/photos/25797459@N06/5438799763/</footer>
-  </slide>
-
-  <slide class="segue dark quote nobackground">
-    <article class="flexbox vleft auto-fadein">
-      <q>
-        This is an example of quote text.
-      </q>
-      <div class="author">
-        Name<br>
-        Company
-      </div>
     </article>
   </slide>
 
