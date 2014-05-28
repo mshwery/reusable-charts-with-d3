@@ -324,7 +324,7 @@ var chart = d3.select(output)
       <h2>Repeatable</h2>
     </hgroup>
     <article class="smaller">
-      <p>Using d3.chart</p>
+      <p>Easily reuse a chart's blueprints on any node (using d3.chart)</p>
       <pre class="prettyprint" data-lang="javascript">
 // define a chart
 d3.chart("CircleChart", {
@@ -343,6 +343,50 @@ var chart2 = d3.select("#chart2")
   </slide>
 
   <slide>
+    <hgroup>
+      <h4>Architecting Reusable Charts</h4>
+      <h2>Updatable</h2>
+    </hgroup>
+    <article class="smaller">
+      <pre class="prettyprint" data-lang="javascript">
+// assume previously defined d3.chart called
+// CircleChart
+
+// create an instance of the chart on a d3 selection
+var chart = d3.select(output)
+  .append("svg")
+  .attr("height", 30)
+  .attr("width", 400)
+  .chart("CircleChart");
+
+var data = [1,4,6,9,12,13,30];
+
+// render it with some data
+chart.draw(data);
+
+// add data
+data.push(35);
+
+// render it with updated data
+chart.draw(data);
+</pre>
+      <footer class="source">source: Miso Project – d3.chart <a href="http://misoproject.com/d3-chart/api.html#d3chart_i_draw">http://misoproject.com/d3-chart/api.html#d3chart_i_draw</a></footer>
+    </article>
+  </slide>
+
+  <slide>
+    <article class="flexbox vcenter">
+      <h2>Other projects doing this:</h2>
+      <ul>
+        <li>n3-charts <a href="http://n3-charts.github.io/line-chart/#/">http://n3-charts.github.io/line-chart/</a></li>
+        <li>NVD3 <a href="http://nvd3.org/">http://nvd3.org/</a></li>
+        <li>C3 <a href="http://c3js.org/">http://c3js.org/</a></li>
+        <li>d3.chart <a href="http://misoproject.com/d3-chart/">http://misoproject.com/d3-chart/</a></li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
     <article class="flexbox vcenter">
       <img src="images/d3.chart.png">
       <footer class="source">source: Miso Project – d3.chart <a href="http://misoproject.com/d3-chart/">http://misoproject.com/d3-chart/</a></footer>
@@ -350,53 +394,75 @@ var chart2 = d3.select("#chart2")
   </slide>
 
   <slide>
-    <article class="flexbox vcenter">
-      <ul>
-        <li>n3-charts<a href="http://n3-charts.github.io/line-chart/#/">http://n3-charts.github.io/line-chart/#/</a></li>
-        <li>NVD3<a href="http://nvd3.org/">http://nvd3.org/</a></li>
-        <li>C3<a href="http://c3js.org/">http://c3js.org/</a></li>
-        <li>d3.chart<a href="http://misoproject.com/d3-chart/">http://misoproject.com/d3-chart/</a></li>
-      </ul>
-    </article>
-  </slide>
-
-<!--
-    <aside class="note">
-      <section>
-        <ul>
-          <li>Point I wanted to make #1</li>
-          <li>Point I wanted to make #2</li>
-          <li>Point I wanted to make #3</li>
-          <li>Example <a href="#">link</a> in notes.</li>
-        </ul>
-        <p><b>Remember to say this tag line!</b></p>
-      </section>
-    </aside>
--->
-
-  <slide>
-    <aside class="note">
-      <section>
-        <ul>
-          <li>See this amazing link: <a href="http://www.google.com">link</a>.</li>
-        </ul>
-        <p><b>Remember to say this tag line!</b></p>
-      </section>
-    </aside>
     <hgroup>
-      <h2>Presenter Mode</h2>
+      <h2>Building a reusable circle chart</h2>
     </hgroup>
-    <article>
-      <p>Add <code><a href="?presentme=true" target="_self">?presentme=true</a></code> to the URL to enabled presenter mode.
-      This setting is sticky, meaning refreshing the page will persist presenter
-      mode.</p>
-      <p>Hit <code><a href="?presentme=false" target="_self">?presentme=false</a></code> to disable presenter mode.</p>
+    <article class="smaller">
+      <pre class="prettyprint" data-lang="javascript">
+d3.chart('BarChart', {
+  initialize: function() {
+    this.xScale = d3.scale.ordinal();
+    this.yScale = d3.scale.linear();
+    this._color = d3.scale.category10();
+
+    this._width = this._width || this.base.attr('width') || 200;
+    this._height = this._height || this.base.attr('height') || 100;
+
+    var barsLayerBase = this.base.append('g')
+      .classed('bars', true);
+
+    this.layer('bars', barsLayerBase, {
+
+      dataBind: function(data) {
+        var chart = this.chart();
+
+        // update x-scale
+
+        // update y-scale
+
+        // return selection with new data bound to it
+      },
+
+      insert: function() {
+        // return this with alterations that happens on insertion of new data points
+      },
+
+      events: {
+        enter: function() {
+          // return this with alterations that happen on enter
+        }
+      }
+
+    });
+  },
+
+  width: function(newValue) {
+    if (arguments.length === 0) {
+      return this._width;
+    }
+    this._width = newValue;
+    this.base.attr('width', this._width);
+    this.xScale.rangeRoundBands([0, newValue], 0.1);
+    return this;
+  },
+
+  height: function(newValue) {
+    if (arguments.length === 0) {
+      return this._height;
+    }
+    this._height = newValue;
+    this.base.attr('height', this._height);
+    this.yScale.range([newValue, 0]);
+    return this;
+  }
+});
+</pre>
     </article>
   </slide>
 
   <slide class="thank-you-slide segue nobackground">
     <article class="flexbox vleft auto-fadein">
-      <h2>&lt;Thank You!&gt;</h2>
+      <h2>Thank You!</h2>
       <p>Questions?</p>
     </article>
     <p class="auto-fadein" data-config-contact>
