@@ -74,7 +74,7 @@ slides > slide {
 
   @include border-radius($slide-border-radius);
   //@include box-shadow(5px 5px 20px $gray-4);
-  @include transition(all 0.6s ease-in-out);
+  @include transition(all 300ms ease-in-out);
 
   //$translateX: 1020px;
   //$rotateY: 30deg;
@@ -129,8 +129,6 @@ slides > slide {
   }
 
   &:not(.nobackground) {
-    //background: white url(../../images/google_developers_icon_128.png) ($brand-small-icon-size * 2) 98% no-repeat;
-    //@include background-size($brand-small-icon-size $brand-small-icon-size);
 
     &:before {
       font-size: 12pt;
@@ -138,7 +136,7 @@ slides > slide {
       position: absolute;
       bottom: $slide-top-bottom-padding / 2;
       left: $slide-left-right-padding;
-      background: url(../../images/google_developers_icon_128.png) no-repeat 0 50%;
+      background: url(../../images/federated_sample_mark.svg) no-repeat 0 50%;
       @include background-size($brand-small-icon-size $brand-small-icon-size);
       padding-left: $brand-small-icon-size + 10;
       height: $brand-small-icon-size;
@@ -157,8 +155,6 @@ slides > slide {
   &.title-slide {
     &:after {
       content: '';
-      //background: url(../../images/io2012_logo.png) no-repeat 100% 50%;
-      //@include background-size(contain);
       position: absolute;
       bottom: $slide-top-bottom-padding;
       right: $slide-top-bottom-padding;
@@ -327,7 +323,7 @@ ul {
 .highlight-code slide.current {
   pre > * {
     opacity: 0.25;
-    @include transition(opacity 0.5s ease-in);
+    @include transition(opacity 150ms ease-in);
   }
   b {
     opacity: 1;
@@ -561,7 +557,7 @@ article.smaller {
 
 .build {
   > * {
-    @include transition(opacity 0.5s ease-in-out 0.2s);
+    @include transition(opacity 150ms ease-in-out 0.2s);
   }
 
   .to-build {
@@ -635,7 +631,7 @@ article.smaller {
   @include border-radius($slide-border-radius);
 
   @include box-sizing(border-box);
-  @include transform(translateY($slide-height / 2));@include transition(all 0.4s ease-in-out);
+  @include transform(translateY($slide-height / 2));@include transition(all 300ms ease-in-out);
 
   > section {
     background: #fff;
@@ -765,7 +761,7 @@ article.smaller {
 }
 
 .auto-fadein {
-  @include transition(opacity 0.6s ease-in 1s);
+  @include transition(opacity 300ms ease-in 500ms);
   opacity: 0;
 }
 
@@ -854,7 +850,7 @@ aside.gdbar {
   @include border-radius(0 10px 10px 0);
   @include background(linear-gradient(left, $gray-1, $gray-1) no-repeat);
   @include background-size(0% 100%);
-  @include transition(all 0.5s ease-out 0.5s); /* Better to transition only on background-size, but not sure how to do that with the mixin. */
+  @include transition(all 300ms ease-out 300ms); /* Better to transition only on background-size, but not sure how to do that with the mixin. */
 
   &.right {
     right: 0;
