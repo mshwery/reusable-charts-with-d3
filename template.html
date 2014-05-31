@@ -24,6 +24,18 @@
 <slides class="layout-widescreen">
 
   <slide class="title-slide segue nobackground">
+    <aside class="note">
+      <section>
+        <ul>
+          <li>Frontend Dev</li>
+          <li>Federated Sample</li>
+          <li>software company in MR but not doing MR</li>
+          <li>Example <a href="#">link</a> in notes.</li>
+        </ul>
+        <p><b>Remember to say this tag line!</b></p>
+      </section>
+    </aside>
+
     <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
     <hgroup class="auto-fadein">
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
@@ -32,9 +44,39 @@
     </hgroup>
   </slide>
 
-  <slide class="logoslide nobackground">
+<!--   <slide class="logoslide nobackground">
     <article class="flexbox vcenter">
       <img src="images/fedlogo.svg" style="display: block; width: 62%; height: auto;">
+    </article>
+  </slide> -->
+
+  <slide class="nobackground">
+
+    <aside class="note">
+      <section>
+        <p>the story about our favorite hockey team get scholarship to the prestigious Eden Hall Academy</p>
+        <p><b>favorite mighty ducks movie</b></p>
+      </section>
+    </aside>
+
+    <article class="flexbox vcenter">
+      <img src="images/d3.jpg">
+    </article>
+  </slide>
+
+  <slide>
+    <aside class="note">
+      <section>
+        <ul>
+          <li>actually this is what i'm talking about</li>
+          <li>tons of very rich examples</li>
+          <li>very customizable / composable visualizations</li>
+        </ul>
+      </section>
+    </aside>
+
+    <article>
+      <iframe src="d3js.org"></iframe>
     </article>
   </slide>
 
@@ -43,8 +85,8 @@
       <h2>What's D3.js?</h2>
     </hgroup>
     <article>
-      <p>What it isn't:</p>
-      <ul class="build">
+      <p>What it <b><i>isn't</i></b></p>
+      <ul>
         <li><b>not</b> a charting/plotting tool</li>
         <li><b>not</b> canvas, Raphael, or Processing</li>
         <li><b>not</b> just svg (any elements!)</li>
@@ -57,8 +99,8 @@
       <h2>What's D3.js?</h2>
     </hgroup>
     <article>
-      <p>What it is:</p>
-      <ul class="build">
+      <p>What it <b><i>is</i></b></p>
+      <ul>
         <li>
           A tool to bind data to the DOM
         </li>
@@ -66,10 +108,10 @@
           DOM selection and manipulation
         </li>
         <li>
-          Enter/Exit (stages)
+          Stages (Enter/Exit)
         </li>
         <li>
-          Focuses on transformation and composition
+          Transformation and composition
         </li>
         <li>
           Transitions
@@ -79,6 +121,19 @@
   </slide>
 
   <slide>
+
+    <aside class="note">
+      <section>
+        <ul>
+          <li>NYTimes by Mike Bostock - creator of d3</li>
+          <li>very unique</li>
+          <li>switch between visualization layers</li>
+          <li>transform the data representation</li>
+          <li>transitions!</li>
+        </ul>
+      </section>
+    </aside>
+
     <article>
       <iframe src="http://www.nytimes.com/interactive/2012/02/13/us/politics/2013-budget-proposal-graphic.html"></iframe>
     </article>
@@ -103,18 +158,19 @@
   </slide>
 
   <slide>
-    <article>
-      <iframe src="http://bl.ocks.org/Caged/raw/6476579/7d0158c142ca6bdbb085132c9daa59855f3552cb/"></iframe>
-    </article>
-  </slide>
 
-  <slide>
-    <article>
-      <iframe src="http://www.samplicio.us/fulcrum/leverage/monitor"></iframe>
-    </article>
-  </slide>
+    <aside class="note">
+      <section>
+        <ul>
+          <li>very simple example</li>
+          <li>no stages (only inserting/drawing once)</li>
+          <li>similar to jQuery</li>
+          <li>declarative style</li>
+          <li>chaining</li>
+        </ul>
+      </section>
+    </aside>
 
-  <slide>
     <hgroup>
       <h2>Bar Chart</h2>
     </hgroup>
@@ -125,6 +181,16 @@
   </slide>
 
   <slide>
+
+    <aside class="note">
+      <section>
+        <ul>
+          <li>start with a selection of DOM nodes</li>
+          <li>using SVG's rect, so i need to append SVG container first</li>
+        </ul>
+      </section>
+    </aside>
+
     <hgroup>
       <h2>Bar Chart</h2>
     </hgroup>
@@ -135,6 +201,16 @@
   </slide>
 
   <slide>
+
+    <aside class="note">
+      <section>
+        <ul>
+          <li>now within our svg, select nodes</li>
+          <li>but they</li>
+        </ul>
+      </section>
+    </aside>
+
     <hgroup>
       <h2>Bar Chart</h2>
     </hgroup>
@@ -174,12 +250,40 @@
     </article>
   </slide>
 
+  <slide class="nobackground">
+
+    <aside class="note">
+      <section>
+        <p>show example in browser</p>
+        <p><b>the more charts, the more of this</b></p>
+        <p>how do you encapsulate / abstract?</p>
+        <p>what's d3 have to say for itself?</p>
+      </section>
+    </aside>
+
+    <article class="flexbox vcenter">
+      <img src="images/spaghetti.jpeg">
+    </article>
+  </slide>
+
   <slide>
+
+    <aside class="note">
+      <section>
+        <ul>
+          <li>you quickly see that using d3 can result in spaghetti code</li>
+          <li>lots of code to create a simple chart - composition!</li>
+          <li>lots of examples - but complexity of them encourages copy/paste culture with lots of boilerplate</li>
+          <li>no concept of reusability - you have to bring that yourself</li>
+        </ul>
+      </section>
+    </aside>
+
     <hgroup>
-      <h2>But...</h2>
+      <h2>Unfortunately...</h2>
     </hgroup>
     <article>
-      <p>D3 doesn't offer many opinions about:</p>
+      <p>D3 doesn't offer many opinions about</p>
       <ul>
         <li>organization & architecture</li>
         <li>reducing boilerplate</li>
@@ -207,6 +311,24 @@
 -->
   </slide>
 
+  <slide>
+    <aside class="note">
+      <section>
+        <ul>
+          <li>tasked to design this dashboard to track progress towards that goal</li>
+          <li>this project lead me to d3</li>
+          <li>chose d3 because its customizable, based on web standards, and wanted to learn</li>
+          <li>ended up some ugly constructor functions with lots of boilerplate for repeated visuals</li>
+        </ul>
+        <p><b>could likely implement this with easier charting tools, but we have ambitions and lots of data we want to visualize in very flexible ways</b></p>
+      </section>
+    </aside>
+
+    <article>
+      <iframe src="http://www.samplicio.us/fulcrum/leverage/monitor"></iframe>
+    </article>
+  </slide>
+
   <slide class="segue dark quote nobackground">
     <article class="flexbox vleft auto-fadein">
       <h2>Architecting <b>Reusable</b> Charts</h2>
@@ -219,19 +341,43 @@
   </slide>
 
   <slide>
+
+    <aside class="note">
+      <section>
+        <ul>
+          <li>guidelines from Mike Bostock and Just Smart concepts</li>
+          <li>these tenants will guide us in creating our own or selecting existing frameworks</li>
+        </ul>
+      </section>
+    </aside>
+
     <hgroup>
       <h2>Architecting Reusable Charts</h2>
     </hgroup>
     <article>
-      <ul class="build">
+      <ul>
         <li>Configurable</li>
-        <li>Extensible</li>
+        <li>Extensible / Composable</li>
         <li>Repeatable</li>
+        <li>Updatable</li>
       </ul>
     </article>
   </slide>
 
   <slide>
+
+    <aside class="note">
+      <section>
+        <ul>
+          <li>R3 - a small modular wrapper around d3 for my company</li>
+          <li>can pass object with configuration</li>
+          <li>this uses the donut or pie module</li>
+          <li>each pie chart below is generated by this with different configurations</li>
+        </ul>
+        <p><b>this code example is on the right, updating its data with the current time in seconds, every second</b></p>
+      </section>
+    </aside>
+
     <hgroup>
       <h4>Architecting Reusable Charts</h4>
       <h2>Configurable</h2>
@@ -302,6 +448,18 @@ setInterval(function() {
   </slide>
 
   <slide>
+
+    <aside class="note">
+      <section>
+        <ul>
+          <li>d3.chart (small d3 extention framework) has a good example extensibility</li>
+          <li>define blueprints</li>
+          <li>extend to new blueprints (similar to Backbone and jQuery concepts of extend)</li>
+          <li>can also compose multiple layers of blueprints into a richer visualization blueprint</li>
+        </ul>
+      </section>
+    </aside>
+
     <hgroup>
       <h4>Architecting Reusable Charts</h4>
       <h2>Extensible</h2>
@@ -355,6 +513,20 @@ var chart2 = d3.select("#chart2")
   </slide>
 
   <slide>
+
+    <aside class="note">
+      <section>
+        <ul>
+          <li>almost all of our implementations need to be easily updated with new data points</li>
+          <li>use d3's concept of stages</li>
+          <li>that's more boilerplate in all of our charts</li>
+          <li>d3.chart provides a 'draw' method that allows you to pass in a dataset those blueprints are expected to draw</li>
+          <li>your blueprints can have instructions for transitioning those stages (enter/exit/udpate)</li>
+          <li>blueprint also emits events you can use outside of your chart</li>
+        </ul>
+      </section>
+    </aside>
+
     <hgroup>
       <h4>Architecting Reusable Charts</h4>
       <h2>Updatable</h2>
@@ -399,6 +571,22 @@ chart.draw(data);
   </slide>
 
   <slide>
+
+    <aside class="note">
+      <section>
+        <ul>
+          <li>d3.chart is most attractive to me</li>
+          <li>doesnt provide the charts themselves</li>
+          <li>provides a framework for defining blueprints for charts</li>
+          <li>you can share or find other blueprints for charts, axes, labels from other devs</li>
+          <li>compose, mix n' match, extend your own</li>
+          <li>encapsulates instructions</li>
+          <li>provides events</li>
+          <li>abstracts the boilerplate that's common for all charts</li>
+        </ul>
+      </section>
+    </aside>
+
     <article class="flexbox vcenter">
       <img src="images/d3.chart.png">
       <footer class="source">source: Miso Project – d3.chart <a href="http://misoproject.com/d3-chart/">http://misoproject.com/d3-chart/</a></footer>
@@ -406,69 +594,24 @@ chart.draw(data);
   </slide>
 
   <slide>
+
+    <aside class="note">
+      <section>
+        <ul>
+          <li>go here</li>
+          <li>simple example</li>
+          <li>uses d3.chart</li>
+          <li>the chart blueprints are good, but the rest of the code isnt high quality</li>
+          <li>node + websockets + d3 + d3.chart</li>
+        </ul>
+      </section>
+    </aside>
+
     <hgroup>
-      <h2>Building a reusable circle chart</h2>
+      <h2>bit.ly/ratemytalk</h2>
     </hgroup>
-    <article class="smaller">
-      <pre class="prettyprint" data-lang="javascript">
-d3.chart('BarChart', {
-  initialize: function() {
-    this.xScale = d3.scale.ordinal();
-    this.yScale = d3.scale.linear();
-    this._color = d3.scale.category10();
-
-    this._width = this._width || this.base.attr('width') || 200;
-    this._height = this._height || this.base.attr('height') || 100;
-
-    var barsLayerBase = this.base.append('g')
-      .classed('bars', true);
-
-    this.layer('bars', barsLayerBase, {
-
-      dataBind: function(data) {
-        var chart = this.chart();
-
-        // update x-scale
-
-        // update y-scale
-
-        // return selection with new data bound to it
-      },
-
-      insert: function() {
-        // return this with alterations that happens on insertion of new data points
-      },
-
-      events: {
-        enter: function() {
-          // return this with alterations that happen on enter
-        }
-      }
-
-    });
-  },
-
-  width: function(newValue) {
-    if (arguments.length === 0) {
-      return this._width;
-    }
-    this._width = newValue;
-    this.base.attr('width', this._width);
-    this.xScale.rangeRoundBands([0, newValue], 0.1);
-    return this;
-  },
-
-  height: function(newValue) {
-    if (arguments.length === 0) {
-      return this._height;
-    }
-    this._height = newValue;
-    this.base.attr('height', this._height);
-    this.yScale.range([newValue, 0]);
-    return this;
-  }
-});
-</pre>
+    <article>
+      <iframe data-src="http://ratemytalk.herokuapp.com"></iframe>
     </article>
   </slide>
 

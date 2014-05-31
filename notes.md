@@ -1,6 +1,8 @@
 # Introduction
 
-  Hello, I'm Matt Shwery.
+  Hello, it's great to be here in Detroit at the first ever self.conference.
+
+  My name is Matt Shwery – I'm a frontend developer from New Orleans. I work at a company called Federated Sample
 
   I'm a Frontend Developer from New Orleans. I work at this company, Federated Sample – a software and services company in the Market Research industry. We don't do Market Research ourselves, but build tools to faciliate it.
 
@@ -74,13 +76,13 @@ In my case, I had a few visuals that required deeper customization (styling, gen
       'pie': function(config) { /* pie chart specific generation here */ }
     };
 
-    function chartGenerator(config) {
+    function chartGenerator(chartType, config) {
       // enforce a valid chart-type
-      if (!charts[config.type]) {
-        throw new Error("Must specify a valid chart type in your configuration parameters");
+      if (!charts[chartType]) {
+        throw new Error("Must specify a valid chart type");
       } else {
         // actually call the proper generator
-        return charts[config.type].apply(this, config);
+        return charts[chartType].apply(this, config);
       }
     }
 
